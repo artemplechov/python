@@ -10,8 +10,5 @@ def int_func(my_string):
         result_string = result_string + " " + tmp_string
     return result_string[1:]
 
-
-
-
 my_string = input("Введите строку. Слова в строке начинаются с\nпрописной буквы и разделяются пробелами:\n")
 print(int_func(my_string))
