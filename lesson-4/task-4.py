@@ -1,4 +1,9 @@
-total_list = [2,2,2,7,23,1,44,44,3,2,10,7,4,11]
+import random
+
+#total_list = [2,2,2,7,23,1,44,44,3,2,10,7,4,11]
+total_list = []
+for i in range(random.randint(0,50)):
+    total_list.append(random.randint(0,25))
 result_list = []
 tmp_list = []
 for i in range(len(total_list)):
@@ -6,7 +11,7 @@ for i in range(len(total_list)):
 
 print(total_list)
 print(result_list)
-#total_list.sort()
+total_list.sort()
 
 print(total_list)
 
