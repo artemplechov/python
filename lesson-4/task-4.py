@@ -2,35 +2,33 @@ print("Задача 4. Генерация списка, его обратбот�
 
 import random
 
-#total_list = [2,2,2,7,23,1,44,44,3,2,10,7,4,11]
 total_list = []
+
 for i in range(random.randint(0,50)):
-    total_list.append(random.randint(0,25))
+    total_list.append(random.randint(0,50))
 
-result_list = total_list.copy()
-#tmp_list = []
-#for i in range(len(total_list)):
- #   result_list.append(0)
+result_list = []
 
-print(total_list)
-#print(result_list)
+print(f"Исходный список:\n{total_list}")
+
 total_list.sort()
 
-print(total_list)
+print(f"Отсортированный исходный список:\n{total_list}\nСортирую только для удобства визуальной проверки")
 
 count = 0
-a = 0
 
-for i in range(len(total_list)-1):
+for i in range(len(total_list)):
     count = total_list.count(total_list[i])
-    print(count)
-    if count != 0:
-        a = total_list[i]
-        for j in range(count-1):
-            result_list.remove(a)
-print(result_list)
+    if count == 1:
+        result_list.append(total_list[i])
 
+print(f"Итоговый список:\n{result_list}")
 
+# Ниже первый способ решения. Поочередено беру каждый элемент списка и проверяю,
+# есть ли он в срезе списка без него самого. Параллено создается пустой список,
+# куда записываются 0, если элемента в срезе нет, 1 - если есть.
+# Затем прогоняю цикл по всписку и удаляю те элементы, у которых на этой же
+# позиции во втором списке стоит 1.
 #for i in range(len(total_list)):
  #   a = total_list[i]
   #  print(f"a  {a}")
