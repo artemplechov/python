@@ -5,7 +5,7 @@ import time
 class OrganicCell():
     def __init__(self, v: int):
         if not isinstance(v, int) or v <= 0:
-            raise ValueError("Ошибка! Количество ячеек в клетке может быть только целым числом больще 0")
+            raise ValueError("Ошибка! Количество ячеек в клетке может быть только целым числом больше 0")
         self.__v = v
 
     def __add__(self, other):
@@ -26,7 +26,7 @@ class OrganicCell():
         if self.com == 0:
             return f"Ошибка! Данная операция приведет к уничтожению клетки"
         else:
-            return self.dif
+            return self.com
 
 
     def __truediv__(self, other):
@@ -62,11 +62,17 @@ class OrganicCell():
 
 
 
-a = OrganicCell(16)
+a = OrganicCell(19)
 print(a)
 b = OrganicCell(3)
+print(b)
+z = a+b
+print(f"Результат сложения клеток = {z} яч.")
 z = a-b
-print(z)
+print(f"Результат вычитаиня клеток = {z} яч.")
+z = a*b
+print(f"Результат умножения клеток = {z} яч.")
 z = a/b
-print(z)
-print(a.MakeOrder(6))
+print(f"Результат деления клеток = {z} яч.")
+
+print(a.MakeOrder(2))
