@@ -9,4 +9,39 @@ print("Задание 2. Реализовать проект расчета су
 
 from abc import ABC, abstractmethod
 
-class Cloth(ABC):
+class AbstractCloth(ABC):
+    @abstractmethod
+    def Square(self, v):
+        pass
+
+    def __add__(self, other):
+        s = self.s+other.s
+        return f"Общий расход ткани = {s}м"
+
+class Coat(AbstractCloth):
+    def __init__(self, v):
+        self.v = v
+        self.s = 0
+
+    def Square(self):
+        self.s = self.v/6.5 + 0.5
+        return f"На пальто нужно {self.s}м ткани"
+
+
+class Suit(AbstractCloth):
+    def __init__(self, h):
+        self.h = h
+        self.s = 0
+
+    def Square(self):
+        self.s = 2*self.h + 0.3
+        return f"На костюм нужно {self.s}м ткани"
+
+
+
+my_coat = Coat(6.5)
+my_suit = Suit(2)
+print(my_coat.Square())
+print(my_suit.Square())
+z = my_suit+my_coat
+print(z)
