@@ -12,13 +12,16 @@ class OwnException(Exception):
         self.str = ''
 
     def check(self):
-        while self.str != 'stop':
+        is_str = False
+        while not is_str:
             self.str = input("Введите элемент списка(число): ")
-
-            try:
-                self.list.append(int(self.str))
-            except ValueError:
-                print("Вы ввели символ")
+            if self.str != 'stop':
+                try:
+                    self.list.append(int(self.str))
+                except ValueError:
+                    print("Вы ввели символ")
+            else:
+                break
         return self.list
 
 
