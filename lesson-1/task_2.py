@@ -6,3 +6,5 @@ n = n - hours * 3600
 minutes = n // 60
 seconds = n % 60
 print(f"{hours}ч:{minutes}м:{seconds}сек")
+
+превед
